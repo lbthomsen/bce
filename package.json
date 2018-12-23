@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "Ethereum Faucet",
   "main": "server.js",
-  "scripts": {"start":"node server.js master",
+  "scripts": {
+    "start": "node server.js master",
     "run": "node server master"
   },
   "repository": {
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/lbthomsen/faucet#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.6.3",
     "angular": "^1.7.5",
     "angular-animate": "^1.7.5",
     "angular-head-lbthomsen": "^1.0.1",
@@ -57,6 +59,7 @@
     "q": "^1.5.1",
     "readable-stream": "^3.1.0",
     "request": "^2.88.0",
+    "styled-icons": "^5.6.0",
     "ui-bootstrap4": "^3.0.5"
   },
   "devDependencies": {

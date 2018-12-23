@@ -5,8 +5,8 @@
 
     var module = angular.module("app-main-directive", []);
     
-    module.controller("AppMainController", ["$log", "MessageService", 
-        function($log, messageService) {
+    module.controller("AppMainController", ["$log", 
+        function($log) {
             $log.debug("AppMainController: starting");
         }
     ]);

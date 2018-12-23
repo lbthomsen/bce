@@ -35,16 +35,10 @@ module.exports = function (grunt) {
                         src: ["BcIpfs.json"]
                     },
                     {
-                        cwd: 'node_modules/bootstrap',
+                        cwd: 'node_modules/@fortawesome/fontawesome-free',
                         dest: 'pub/',
                         expand: true,
-                        src: ['fonts/**']
-                    }, 
-                    {
-                        cwd: 'node_modules/font-awesome',
-                        dest: 'pub/',
-                        expand: true,
-                        src: ['fonts/**']
+                        src: ['webfonts/**']
                     },
                     {
                         cwd: './',

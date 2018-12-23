@@ -15,7 +15,9 @@ module.exports = {
     client: {
         name: package.name, 
         version: package.version, 
-        copyright: "Copyright (c) 2018 Lars Boegild Thomsen <lbthomsen@gmail.com"
+        copyright: "Copyright (c) 2018 Lars Boegild Thomsen <lbthomsen@gmail.com", 
+        chainName: settings.chainName,
+        chainSymbol: settings.chainSymbol
     }
 };
 

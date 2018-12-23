@@ -19,33 +19,13 @@
         "ui.bootstrap", 
         "LocalStorageModule",
         "system-service",
-        "auth-service",
-        "email-service",
-        "package-service",
-        "pin-service",
-        "transaction-service",
-        "file-service",
-        "shout-service", 
-        "message-service", 
+        "web3-service", 
         "app-header-directive",
         "app-sidebar-directive",
         "app-main-directive",
         "app-footer-directive",
-        "ad-directive",
-        "inview-img-directive",
-        "file-upload-directive",
-        "add-pin-directive",
-        "pins-directive",
-        "pin-directive",
-        "transactions-directive", 
-        "transaction-directive", 
         "home-route",
-        "static-route",
-        "about-route",
-        "auth-route",
-        "contact-route",
-        "pins-route",
-        "transactions-route"
+        "about-route"
     ]);
 
     app.config(["$logProvider", "$locationProvider", "$httpProvider", "HeadServiceProvider",
@@ -56,13 +36,13 @@
                 requireBase: true
             });
 
-            $httpProvider.interceptors.push("AuthInterceptor");
+            //$httpProvider.interceptors.push("AuthInterceptor");
 
             // This is where the HeadService default values are configured!
-            headServiceProvider.setTitle("ipfs-pin");
+            headServiceProvider.setTitle("Faucet");
             headServiceProvider.setMetas({
-                description: "IPFS Pin Service",
-                keywords: "ipfs,pin",
+                description: "Faucet",
+                keywords: "ether,ethereum,faucet",
                 author: "Lars Boegild Thomsen <lbthomsen@gmail.com>",
                 generator: "AngularJS"
             });
@@ -79,20 +59,20 @@
         function ($log, $rootScope, $location, $window, $timeout, $route) {
 
             // The standard Google Analytics stuff
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments);
-                }, i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                        m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m);
-            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-            ga('create', 'UA-89965874-12', 'auto');
-            ga('require', 'displayfeatures');
+//            (function (i, s, o, g, r, a, m) {
+//                i['GoogleAnalyticsObject'] = r;
+//                i[r] = i[r] || function () {
+//                    (i[r].q = i[r].q || []).push(arguments);
+//                }, i[r].l = 1 * new Date();
+//                a = s.createElement(o),
+//                        m = s.getElementsByTagName(o)[0];
+//                a.async = 1;
+//                a.src = g;
+//                m.parentNode.insertBefore(a, m);
+//            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+//
+//            ga('create', 'UA-89965874-12', 'auto');
+//            ga('require', 'displayfeatures');
 
             $rootScope.$on("$routeChangeStart", function () {
                 $rootScope.$emit("setLoading");
@@ -103,13 +83,13 @@
                 $rootScope.$emit("resetLoading");
 
                 // Experimentally delay updating Google until header is updated
-                $timeout(function () {
-                    $log.debug("Application: updating Google");
-                    $window.ga('send', {
-                        hitType: 'pageview',
-                        page: $location.path()
-                    });
-                }, 200);
+//                $timeout(function () {
+//                    $log.debug("Application: updating Google");
+//                    $window.ga('send', {
+//                        hitType: 'pageview',
+//                        page: $location.path()
+//                    });
+//                }, 200);
             });
         }
     ]);

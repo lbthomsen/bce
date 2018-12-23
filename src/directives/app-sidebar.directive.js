@@ -5,12 +5,13 @@
 
     var module = angular.module("app-sidebar-directive", []);
     
-    module.controller("SidebarController", ["$log", "AuthService", 
-        function($log, authService) {
+    module.controller("SidebarController", ["$log", "Web3Service", 
+        function($log, web3Service) {
             $log.debug("SidebarController: starting");
             
             var that = this;
-            that.authService = authService;
+            that.web3Service = web3Service;
+            
         }
     ]);
 

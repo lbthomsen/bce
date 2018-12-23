@@ -5,11 +5,10 @@
 
     var module = angular.module("app-header-directive", []);
     
-    module.controller("HeaderController", ["$log", "AuthService", 
-        function($log, authService) {
+    module.controller("HeaderController", ["$log", 
+        function($log) {
             $log.debug("HeaderController: starting");
             var that = this;
-            that.authService = authService;
         }
     ]);
 
