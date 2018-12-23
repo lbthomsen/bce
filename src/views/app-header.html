@@ -1,0 +1,73 @@
+<header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="/">
+            <span class="fa fa-home"></span> Faucet
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!--
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#!/intro">Intro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!/node">Node Module</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Blueprints
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#!/bp-intro">Introduction</a>
+                        <a class="dropdown-item" href="#!/bp-wp">Wordpress Standalone</a>
+                        <a class="dropdown-item" href="#!/bp-gimps">GIMPS</a>
+                        <a class="dropdown-item" href="#!/bp-biab2">Blockchain in a Box II</a>
+                    </div>
+                </li>
+            </ul>
+            -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" ng-show="headerCtrl.authService.isAuthenticated">
+                    <a class="nav-link" href="/pins"><span class="fa fa-map-pin"></span> My Pins</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">
+                        <span class="fa fa-user"></span> Account
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/transactions" ng-show="headerCtrl.authService.isAuthenticated"><span class="fa fa-exchange"></span> Transactions</a>
+                        <div class="dropdown-divider" ng-show="headerCtrl.authService.isAuthenticated"></div>
+                        <a class="dropdown-item" href="/login" ng-hide="headerCtrl.authService.isAuthenticated"><span class="fa fa-sign-in"></span> Login</a>
+                        <a class="dropdown-item" href="/register" ng-hide="headerCtrl.authService.isAuthenticated"><span class="fa fa-user-plus"></span> Register</a>
+                        <a class="dropdown-item" href="/logout" ng-show="headerCtrl.authService.isAuthenticated"><span class="fa fa-sign-out"></span> Logout</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">
+                        <span class="fa fa-info"></span> Info
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/help/introduction">Help - Introduction</a>
+                        <a class="dropdown-item" href="/help/faq">Help - FAQ</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/privacy">Privacy</a>
+                        <a class="dropdown-item" href="/tc">Terms and Conditions</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/contact"><span class="fa fa-comment"></span> Contact Us</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/about"><span class="fa fa-question"></span> About</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+</header>

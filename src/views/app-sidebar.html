@@ -1,0 +1,20 @@
+<aside>
+    <div class="card mb-3" ng-show="sidebarCtrl.authService.isAuthenticated">
+        <div class="card-header">
+            Account Balance
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-4 text-right">
+                    Credit:
+                </div>
+                <div class="col-lg-8">
+                    {{ sidebarCtrl.authService.user.credit | number: 2 }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <file-upload></file-upload>
+    </div>
+</aside>

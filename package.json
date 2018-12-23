@@ -1,0 +1,73 @@
+{
+  "name": "faucet",
+  "version": "0.0.1",
+  "description": "Ethereum Faucet",
+  "main": "server.js",
+  "scripts": {"start":"node server.js master",
+    "run": "node server master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lbthomsen/faucet.git"
+  },
+  "keywords": [
+    "ethereum",
+    "faucet",
+    "node",
+    "angularjs"
+  ],
+  "author": "Lars Boegild Thomsen <lbthomsen@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lbthomsen/faucet/issues"
+  },
+  "homepage": "https://github.com/lbthomsen/faucet#readme",
+  "dependencies": {
+    "angular": "^1.7.5",
+    "angular-animate": "^1.7.5",
+    "angular-head-lbthomsen": "^1.0.1",
+    "angular-inview-lbthomsen": "^3.0.0",
+    "angular-loading-lbthomsen": "^0.9.3",
+    "angular-local-storage": "^0.7.1",
+    "angular-moment": "^1.3.0",
+    "angular-resource": "^1.7.5",
+    "angular-route": "^1.7.5",
+    "angular-touch": "^1.7.5",
+    "angular-websocket": "^2.0.1",
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.2.1",
+    "compression": "^1.7.3",
+    "express": "^4.16.4",
+    "express-http-proxy": "^1.5.0",
+    "express-ws": "^4.0.0",
+    "font-awesome": "^4.7.0",
+    "fs-extra": "^7.0.1",
+    "ipfs": "^0.33.1",
+    "ipfs-api": "^26.1.2",
+    "jquery": "^3.3.1",
+    "jwt-simple": "^0.5.5",
+    "mongoose": "^5.4.0",
+    "multer": "^1.4.1",
+    "ng-file-upload": "^12.2.13",
+    "node-cron": "^2.0.3",
+    "node-sass": "^4.11.0",
+    "nodemailer": "^4.7.0",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "popper.js": "^1.14.6",
+    "q": "^1.5.1",
+    "readable-stream": "^3.1.0",
+    "request": "^2.88.0",
+    "ui-bootstrap4": "^3.0.5"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-htmlmin": "^3.0.0",
+    "grunt-contrib-symlink": "^1.0.0",
+    "grunt-contrib-uglify": "^4.0.0",
+    "grunt-replace": "^1.0.1"
+  }
+}

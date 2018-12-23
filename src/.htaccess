@@ -1,0 +1,85 @@
+# Turn on Expires and set default to 0
+ExpiresActive On
+ExpiresDefault A0
+
+# Set up caching on media files for 1 year (forever?)
+<FilesMatch "\.(flv|ico|pdf|avi|mov|ppt|doc|mp3|wmv|wav|woff|woff2)$">
+ExpiresDefault A29030400
+Header append Cache-Control "public"
+</FilesMatch>
+
+# Set up caching on media files for 1 month
+<FilesMatch "\.(gif|jpg|jpeg|png|swf)$">
+ExpiresDefault "access plus 1 month"
+Header append Cache-Control "public"
+</FilesMatch>
+
+# Set up 2 Hour caching on commonly updated files
+<FilesMatch "\.(txt|html)$">
+ExpiresDefault A7200
+Header append Cache-Control "proxy-revalidate"
+</FilesMatch>
+
+# Set up 1 Week caching on css and js files
+<FilesMatch "\.(js|css)$">
+ExpiresDefault "access plus 1 month"
+Header append Cache-Control "proxy-revalidate"
+</FilesMatch>
+
+# Force no caching for dynamic files
+<FilesMatch "\.(php|cgi|pl|htm|xml)$">
+ExpiresActive Off
+Header set Cache-Control "private, no-cache, no-store, proxy-revalidate, no-transform"
+Header set Pragma "no-cache"
+</FilesMatch>
+
+AddOutputFilterByType DEFLATE text/plain text/html
+AddOutputFilterByType DEFLATE text/xml application/xml application/xhtml+xml application/xml-dtd
+AddOutputFilterByType DEFLATE application/rdf+xml application/rss+xml application/atom+xml image/svg+xml
+AddOutputFilterByType DEFLATE text/css text/javascript application/javascript application/x-javascript
+AddOutputFilterByType DEFLATE font/otf font/opentype application/font-otf application/x-font-otf
+AddOutputFilterByType DEFLATE font/ttf font/truetype application/font-ttf application/x-font-ttf
+
+<FilesMatch "\.(js|css)$">
+SetOutputFilter DEFLATE
+</FilesMatch>
+
+AddOutputFilterByType DEFLATE text/plain text/html
+AddOutputFilterByType DEFLATE text/xml application/xml application/xhtml+xml application/xml-dtd
+AddOutputFilterByType DEFLATE application/rdf+xml application/rss+xml application/atom+xml image/svg+xml
+AddOutputFilterByType DEFLATE text/css text/javascript application/javascript application/x-javascript
+AddOutputFilterByType DEFLATE font/otf font/opentype application/font-otf application/x-font-otf
+AddOutputFilterByType DEFLATE font/ttf font/truetype application/font-ttf application/x-font-ttf
+
+<FilesMatch "\.(js|css)$">
+SetOutputFilter DEFLATE
+</FilesMatch>
+
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Credentials "true"
+Header set Access-Control-Allow-Methods "GET,HEAD,OPTION,POST,PUT"
+Header set Access-Control-Allow-Headers "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, Access-Control-Allow-Origin, Content-Type"
+
+SetEnvIfNoCase User-Agent "SemrushBot" bad_agent
+SetEnvIfNoCase User-Agent "AhrefsBot" bad_agent
+SetEnvIfNoCase User-Agent "MJ12bot" bad_agent
+SetEnvIfNoCase User-Agent "SeznamBot" bad_agent
+SetEnvIfNoCase User-Agent "XoviBot" bad_agent
+SetEnvIfNoCase User-Agent "James BOT" bad_agent
+Deny from env=bad_agent
+
+RewriteEngine on
+
+RewriteCond "%{REQUEST_URI}" ="^/$"
+RewriteRule ^/$ index.html [L]
+
+RewriteCond %{REQUEST_URI} ^\/index.html
+RewriteRule ^ - [L]
+
+RewriteCond %{REQUEST_FILENAME} -s
+RewriteRule ^ - [L]
+
+RewriteCond %{REQUEST_FILENAME} -l
+RewriteRule ^ - [L]
+
+RewriteRule ^(.*) index.html [L]
