@@ -10,8 +10,6 @@
         "ngAnimate",
         "ngResource",
         "ngTouch", 
-        "ngFileUpload",
-        "ngWebSocket", 
         "angularMoment",
         "angular-loading",
         "angular-head",

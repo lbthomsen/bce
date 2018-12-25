@@ -5,24 +5,12 @@
 
     var module = angular.module("about-route", []);
 
-    module.controller("AboutController", ["$log", "PackageService",
-        function ($log, packageService) {
+    module.controller("AboutController", ["$log", "SystemService",
+        function ($log, systemService) {
             $log.debug("AboutController: starting");
 
             var that = this;
-            that.package = {};
-            that.packages = [];
-
-            packageService.getPackage(null, function (package) {
-                angular.copy(package, that.package);
-
-                Object.keys(package.dependencies).forEach(function (key) {
-                    packageService.getPackage(key, function (package) {
-                        that.packages.push(package);
-                    });
-                });
-
-            })
+            that.systemService = systemService;
 
         }
     ]);

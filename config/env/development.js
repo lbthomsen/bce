@@ -17,7 +17,8 @@ module.exports = {
         version: package.version, 
         copyright: "Copyright (c) 2018 Lars Boegild Thomsen <lbthomsen@gmail.com", 
         chainName: settings.chainName,
-        chainSymbol: settings.chainSymbol
+        chainSymbol: settings.chainSymbol, 
+        chainNetwork: settings.chainNetwork
     }
 };
 

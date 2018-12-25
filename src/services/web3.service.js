@@ -33,18 +33,22 @@
 
                     // Modern dapp browsers...
                     if ($window.ethereum) {
-                        me.web3 = new Web3(ethereum);
+                        me.web3 = new Web3($window.ethereum);
                         me.hasWeb3 = true;
-                        try {
-                            // Request account access if needed
-                            await ethereum.enable();
-                            
-                            if (me.web3.currentProvider.isMetaMask) {
-                                me.hasMetamask = true;
+                        
+                        $log.debug("Web3Service: got web3 = %o", me.web3);
+                        
+                        if (me.web3.currentProvider.isMetaMask) {
+                            $log.debug("Web3Service: it's metamask");
+                            me.hasMetamask = true;
+
+                            try {
+                                await $window.ethereum.enable();
+                                $log.debug("Web3Service: enabled");
+                            } catch (err) {
+                                $log.error("Web3Service: enable failed");
                             }
                             
-                        } catch (error) {
-                            // User denied account access...
                         }
                     }
                     // Legacy dapp browsers...
